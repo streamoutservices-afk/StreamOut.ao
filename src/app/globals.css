@@ -1,0 +1,584 @@
+@import "tailwindcss";
+
+/* Dark mode por classe (next-themes coloca .dark no <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Utilizadores que pedem menos transparência (macOS/iOS) recebem superfícies sólidas */
+@custom-variant reduced-transparency (@media (prefers-reduced-transparency: reduce));
+
+@theme {
+  /* Paleta oficial StreamOut */
+  --color-brand-royal: #0066ff;
+  --color-brand-cyan: #00c6ff;
+  --color-brand-logo: #0083ff; /* azul exacto do wordmark (medido no ficheiro oficial) */
+  /* Gradiente do fundo oficial da marca (versão branca do logo) */
+  --color-brand-bg-from: #015eea;
+  --color-brand-bg-to: #009ecd;
+
+  /* Neutros — Light: branco/cinza claro · Dark: preto profundo/cinza carvão */
+  --color-paper-50: #fafafc;
+  --color-paper-100: #f2f3f7;
+  --color-paper-200: #e6e8ee;
+  --color-ink-950: #05070b;
+  --color-ink-900: #0b0e14;
+  --color-ink-800: #14181f;
+  --color-ink-700: #1e232c;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "SF Pro Text", "Segoe UI", sans-serif;
+
+  /* Sombras "vidro": highlight interno no topo + sombra difusa */
+  --shadow-glass: inset 0 1px 0 0 rgb(255 255 255 / 0.65), 0 8px 32px -12px rgb(0 30 80 / 0.18);
+  --shadow-glass-dark: inset 0 1px 0 0 rgb(255 255 255 / 0.08), 0 10px 40px -12px rgb(0 0 0 / 0.65);
+  --shadow-brand: 0 8px 24px -8px rgb(0 102 255 / 0.55);
+  --shadow-brand-hover: 0 12px 32px -8px rgb(0 198 255 / 0.6);
+
+  /* Curva de easing ao estilo Apple */
+  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  html,
+  body {
+    /* nada passa da largura do ecrã no telemóvel (clip não cria contentor de scroll → sticky continua a funcionar) */
+    overflow-x: clip;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgb(0 102 255 / 0.2);
+  }
+}
+
+/* Superfície de vidro reutilizável (cards, painéis, modais) */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.6);
+  border: 1px solid rgb(255 255 255 / 0.55);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(12px) saturate(160%);
+
+  @variant dark {
+    background-color: rgb(20 24 31 / 0.55);
+    border-color: rgb(255 255 255 / 0.08);
+    box-shadow: var(--shadow-glass-dark);
+  }
+
+  @variant reduced-transparency {
+    background-color: var(--color-paper-50);
+    backdrop-filter: none;
+  }
+}
+
+/* Browsers sem backdrop-filter: vidro passa a superfície quase opaca para manter contraste */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass,
+  [class*="backdrop-blur"] {
+    background-color: rgb(250 250 252 / 0.96);
+  }
+  .dark .glass,
+  .dark [class*="backdrop-blur"] {
+    background-color: rgb(20 24 31 / 0.96);
+  }
+}
+
+/* =====================================================================
+   Componentes das referências (motion & materiais)
+   ===================================================================== */
+
+@property --so-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@layer components {
+  /* ---------- Cartão líquido (catálogo — ref. vídeo 4) ---------- */
+  .liquid-card {
+    --tint: #4aa3ff;
+    --deep: #0a1f44;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    aspect-ratio: 1.586;
+    border-radius: 18px;
+    color: #fff;
+    background: var(--deep);
+    box-shadow:
+      0 22px 44px -22px rgb(0 20 60 / 0.55),
+      inset 0 0 0 1px rgb(255 255 255 / 0.12);
+    transform: translateZ(0);
+  }
+  .liquid-card .liquid-layer {
+    position: absolute;
+    inset: -30%;
+    z-index: -2;
+    background:
+      radial-gradient(38% 26% at 28% 34%, color-mix(in oklab, var(--tint) 55%, white) 0%, transparent 62%),
+      radial-gradient(30% 20% at 70% 58%, rgb(255 255 255 / 0.8) 0%, transparent 58%),
+      radial-gradient(46% 34% at 52% 86%, var(--tint) 0%, transparent 66%),
+      radial-gradient(28% 22% at 86% 22%, rgb(200 222 255 / 0.85), transparent 60%),
+      radial-gradient(60% 40% at 10% 90%, color-mix(in oklab, var(--deep) 40%, #1a3a7a), transparent 70%),
+      linear-gradient(160deg, var(--deep), color-mix(in oklab, var(--deep) 55%, #0b1a3a));
+    animation: liquid-drift 18s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  .liquid-card .liquid-iris {
+    /* reflexos iridescentes suaves nas "ondas" do metal */
+    position: absolute;
+    inset: -30%;
+    z-index: -1;
+    opacity: 0;
+    mix-blend-mode: color-dodge;
+    background:
+      radial-gradient(22% 9% at 38% 44%, rgb(255 120 190 / 0.55), transparent 70%),
+      radial-gradient(18% 7% at 60% 52%, rgb(90 220 255 / 0.6), transparent 70%),
+      radial-gradient(20% 8% at 70% 30%, rgb(255 225 120 / 0.45), transparent 70%);
+    filter: blur(2px);
+    transition: opacity 0.6s var(--ease-apple);
+  }
+  .liquid-card[data-live="true"] .liquid-layer,
+  .liquid-card[data-live="true"] .liquid-iris,
+  .liquid-card:hover .liquid-layer,
+  .liquid-card:hover .liquid-iris {
+    filter: url(#so-liquid);
+  }
+  .liquid-card[data-live="true"] .liquid-iris,
+  .liquid-card:hover .liquid-iris {
+    opacity: 0.55;
+  }
+  .liquid-card::before {
+    /* brilho especular */
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(115deg, rgb(255 255 255 / 0.22) 0%, transparent 32%, transparent 68%, rgb(255 255 255 / 0.08));
+    pointer-events: none;
+  }
+  .liquid-card::after {
+    /* aro cromático iridescente */
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--so-angle),
+      rgb(255 255 255 / 0.5),
+      rgb(127 211 255 / 0.7),
+      rgb(255 170 230 / 0.55),
+      rgb(255 255 255 / 0.45),
+      rgb(140 255 210 / 0.55),
+      rgb(255 255 255 / 0.5)
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    animation: so-spin 8s linear infinite;
+    pointer-events: none;
+  }
+
+
+  /* Supergráfica: símbolo da marca em grande, com luz em gradiente, a sair pelo canto */
+  .liquid-card .card-mark,
+  .liquid-card .card-mark-icon {
+    position: absolute;
+    z-index: -1;
+    right: -16%;
+    top: -2%;
+    width: 66%;
+    height: 112%;
+    transform: rotate(-12deg);
+    transform-origin: 70% 70%;
+    transition: transform 0.9s var(--ease-apple), opacity 0.9s var(--ease-apple);
+    pointer-events: none;
+  }
+  .liquid-card .card-mark {
+    background: linear-gradient(160deg, rgb(255 255 255 / 0.62) 0%, rgb(255 255 255 / 0.26) 40%, rgb(255 255 255 / 0.06) 80%);
+    -webkit-mask-image: var(--mark);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: var(--mark);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 18px rgb(255 255 255 / 0.18));
+  }
+  .liquid-card .card-mark-icon {
+    width: 58%;
+    height: auto;
+    aspect-ratio: 1;
+    top: 4%;
+    right: -12%;
+    color: rgb(255 255 255 / 0.3);
+  }
+  .liquid-card .card-mark-icon svg {
+    stroke-width: 1.1;
+  }
+  .liquid-card:hover .card-mark,
+  .liquid-card:hover .card-mark-icon,
+  .liquid-card[data-live="true"] .card-mark {
+    transform: rotate(-7deg) scale(1.06) translate(-3%, -2%);
+  }
+  .liquid-card:hover .card-mark {
+    opacity: 1;
+  }
+
+  /* Grão fino: dá textura de papel/metal impresso */
+  .liquid-card .card-grain {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -0.35'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* Reflexo de luz que atravessa o cartão */
+  .liquid-card .card-sheen {
+    position: absolute;
+    inset: -10% -40%;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / 0.22) 47%, rgb(255 255 255 / 0.06) 53%, transparent 60%);
+    transform: translateX(-75%);
+  }
+  .liquid-card:hover .card-sheen {
+    animation: card-sheen 1.3s var(--ease-apple) both;
+  }
+  .liquid-card[data-live="true"] .card-sheen {
+    animation: card-sheen 1.6s var(--ease-apple) 1.2s infinite both;
+    animation-duration: 5s;
+  }
+
+  /* Faixa de vidro fosco com o preço */
+  .liquid-card .card-band {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.06));
+    border-top: 1px solid rgb(255 255 255 / 0.22);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12);
+    backdrop-filter: blur(14px) saturate(1.4);
+  }
+
+  /* Ficha de produto (bottom sheet no telemóvel, janela no desktop) */
+  .sheet-in {
+    animation: sheet-in 0.5s cubic-bezier(0.2, 0.9, 0.25, 1) backwards;
+  }
+  .fade-in {
+    animation: fade-in 0.3s ease backwards;
+  }
+
+  /* ---------- Bilhete holográfico (sucesso — ref. vídeo 1) ---------- */
+  .holo-stage {
+    perspective: 1100px;
+  }
+  .holo-float {
+    animation:
+      holo-in 1s cubic-bezier(0.2, 0.9, 0.25, 1.12) both,
+      holo-float 6s ease-in-out 1s infinite;
+  }
+  .holo-glow {
+    position: absolute;
+    inset: -18% -30%;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(48px);
+    opacity: 0.75;
+    background:
+      radial-gradient(40% 35% at 50% 18%, rgb(255 225 140 / 0.55), transparent 70%),
+      radial-gradient(45% 40% at 25% 70%, rgb(0 198 255 / 0.55), transparent 70%),
+      radial-gradient(45% 40% at 78% 72%, rgb(0 102 255 / 0.6), transparent 70%),
+      radial-gradient(35% 30% at 70% 40%, rgb(190 150 255 / 0.4), transparent 70%);
+  }
+  .holo-ticket {
+    --rx: 0deg;
+    --ry: 0deg;
+    --px: 50%;
+    --py: 50%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    transform: rotateX(var(--rx)) rotateY(var(--ry));
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background: linear-gradient(
+      125deg,
+      #d4ebff 0%,
+      #8fd8ff 16%,
+      #b9b6ff 30%,
+      #6fbcff 46%,
+      #a6f2ff 60%,
+      #d5c6ff 76%,
+      #8ccfff 90%,
+      #e3f2ff 100%
+    );
+    background-size: 240% 240%;
+    background-position: var(--px) var(--py);
+    -webkit-mask:
+      radial-gradient(circle 16px at 0 64%, #0000 97%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle 16px at 100% 64%, #0000 97%, #000) right / 51% 100% no-repeat;
+    mask:
+      radial-gradient(circle 16px at 0 64%, #0000 97%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle 16px at 100% 64%, #0000 97%, #000) right / 51% 100% no-repeat;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.6);
+  }
+  .holo-ticket[data-tilting="true"] {
+    transition: transform 0.08s linear;
+  }
+  .holo-ticket::before {
+    /* padrão holográfico em escamas */
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.55;
+    mix-blend-mode: overlay;
+    background:
+      radial-gradient(circle at 50% 100%, transparent 8px, rgb(255 255 255 / 0.55) 9px, transparent 10.5px) 0 0 / 20px 12px,
+      radial-gradient(circle at 50% 100%, transparent 8px, rgb(255 255 255 / 0.55) 9px, transparent 10.5px) 10px 6px / 20px 12px;
+  }
+  .holo-ticket::after {
+    /* reflexo que segue o ponteiro + faixa iridescente */
+    content: "";
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: soft-light;
+    background:
+      radial-gradient(circle at var(--px) var(--py), rgb(255 255 255 / 0.9), transparent 42%),
+      linear-gradient(
+        115deg,
+        transparent 25%,
+        rgb(255 120 200 / 0.55) 40%,
+        rgb(120 230 255 / 0.6) 50%,
+        rgb(255 240 140 / 0.5) 60%,
+        transparent 75%
+      );
+    background-size: 100% 100%, 300% 300%;
+    background-position: center, var(--px) var(--py);
+  }
+  .holo-perf {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    top: 64%;
+    border-top: 2px dashed rgb(11 14 20 / 0.14);
+  }
+
+  /* ---------- Notificações (pop-ups — ref. vídeo 2) ---------- */
+  .notify-in {
+    animation: notify-in 0.6s cubic-bezier(0.2, 0.9, 0.25, 1.1) backwards;
+  }
+  .notify-out {
+    animation: notify-out 0.35s var(--ease-apple) both;
+  }
+
+  /* ---------- Liquid Glass (perfil — ref. imagem 2) ---------- */
+  .lg-panel {
+    position: relative;
+    border-radius: 28px;
+    border: 1px solid rgb(255 255 255 / 0.7);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.62), rgb(255 255 255 / 0.42));
+    backdrop-filter: blur(22px) saturate(180%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.9),
+      inset 0 -1px 0 rgb(255 255 255 / 0.3),
+      0 30px 60px -24px rgb(0 40 100 / 0.35);
+  }
+  .dark .lg-panel {
+    border-color: rgb(255 255 255 / 0.13);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.035));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.22),
+      inset 0 -1px 0 rgb(255 255 255 / 0.05),
+      0 30px 60px -20px rgb(0 0 0 / 0.65);
+  }
+  .lg-panel::before {
+    /* refracção nas arestas (aberração cromática subtil) */
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+      from 200deg,
+      transparent 0 18%,
+      rgb(255 170 110 / 0.55) 23%,
+      rgb(120 200 255 / 0.7) 28%,
+      transparent 36% 66%,
+      rgb(110 220 255 / 0.55) 73%,
+      rgb(255 150 220 / 0.45) 78%,
+      transparent 85%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    pointer-events: none;
+  }
+  .lg-item-active {
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.75), rgb(255 255 255 / 0.45));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 1),
+      inset 0 0 0 1px rgb(255 255 255 / 0.6),
+      0 6px 16px -8px rgb(0 40 100 / 0.3);
+  }
+  .dark .lg-item-active {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.06));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.3),
+      inset 0 0 0 1px rgb(255 255 255 / 0.12),
+      0 8px 20px -10px rgb(0 0 0 / 0.6);
+  }
+
+  /* Fundo "seda" com grão (dashboard) */
+  .silk-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #eef3fb;
+  }
+  .dark .silk-bg {
+    background: #05070b;
+  }
+  .silk-bg > span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(38px);
+    opacity: 0.7;
+    animation: silk-move 22s ease-in-out infinite alternate;
+  }
+  .silk-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+}
+
+@keyframes so-spin {
+  to {
+    --so-angle: 360deg;
+  }
+}
+@keyframes card-sheen {
+  0% {
+    transform: translateX(-75%);
+  }
+  30%,
+  100% {
+    transform: translateX(75%);
+  }
+}
+@keyframes liquid-drift {
+  0% {
+    transform: translate3d(-6%, -4%, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, 3%, 0) rotate(9deg) scale(1.1);
+  }
+  100% {
+    transform: translate3d(-3%, 6%, 0) rotate(-7deg) scale(1.04);
+  }
+}
+@keyframes holo-in {
+  0% {
+    opacity: 0;
+    transform: translateY(70px) rotateX(40deg) scale(0.82);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes holo-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.2deg);
+  }
+}
+@keyframes notify-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.95);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    /* "none" (e não blur(0)): um filter activo quebraria o backdrop-filter dos filhos */
+    filter: none;
+  }
+}
+@keyframes notify-out {
+  to {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+    filter: blur(6px);
+  }
+}
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes silk-move {
+  0% {
+    transform: translate3d(-4%, -3%, 0) rotate(-8deg) scale(1);
+  }
+  100% {
+    transform: translate3d(5%, 4%, 0) rotate(10deg) scale(1.12);
+  }
+}
+@keyframes cart-bump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.25);
+  }
+}
+@keyframes typing {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-card .liquid-layer,
+  .liquid-card::after,
+  .liquid-card .card-sheen,
+  .sheet-in,
+  .holo-float,
+  .silk-bg > span,
+  .notify-in {
+    animation: none !important;
+  }
+  .liquid-card .liquid-layer,
+  .liquid-card .liquid-iris {
+    filter: none !important;
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "Header": {
+    "tagline": "Oferecendo o melhor do entretenimento",
+    "homeLabel": "StreamOut — página inicial",
+    "navLabel": "Navegação principal",
+    "skipToContent": "Saltar para o conteúdo",
+    "nav": {
+      "giftCards": "Gift Cards",
+      "subscriptions": "Assinaturas",
+      "bundle": "Bundle StreamOut",
+      "howItWorks": "Como funciona"
+    },
+    "bundleBadge": "−15%",
+    "bundleBadgeLabel": "até 15% de desconto",
+    "actions": {
+      "signIn": "Entrar",
+      "account": "A minha conta",
+      "cart": "{count, plural, =0 {Carrinho vazio} one {Carrinho, # artigo} other {Carrinho, # artigos}}",
+      "openMenu": "Abrir menu",
+      "closeMenu": "Fechar menu"
+    },
+    "theme": {
+      "label": "Modo escuro"
+    },
+    "language": {
+      "label": "Idioma",
+      "pt": "Português",
+      "en": "English"
+    }
+  },
+  "Home": {
+    "title": "Oferecendo o melhor do entretenimento",
+    "subtitle": "Gift cards e assinaturas digitais pagos em kwanzas e entregues em minutos. Sem cartão internacional, sem complicações — simples, rápido e seguro.",
+    "ctaPrimary": "Explorar catálogo",
+    "ctaSecondary": "Conhecer o Bundle",
+    "trust": {
+      "kz": "Pagas em kwanzas",
+      "fast": "Entrega em minutos",
+      "secure": "100% seguro",
+      "support": "Apoio em português"
+    },
+    "popularTitle": "Os mais procurados",
+    "popularSubtitle": "Música, séries, IA e armazenamento — aos mesmos preços das marcas, convertidos para kwanzas.",
+    "seeAll": "Ver tudo",
+    "stepsTitle": "Comprar é rápido",
+    "stepsSubtitle": "Do clique ao código no teu e-mail em três passos.",
+    "steps": {
+      "choose": {
+        "title": "Escolhe o que queres",
+        "body": "Assinaturas, gift cards ou o Bundle StreamOut. Vês o preço final em kwanzas antes de pagar."
+      },
+      "pay": {
+        "title": "Paga em kwanzas",
+        "body": "Multicaixa Express, referência ou transferência. Confirmas no teu telemóvel — nós nunca vemos o teu PIN."
+      },
+      "receive": {
+        "title": "Recebe em minutos",
+        "body": "O código chega ao teu e-mail e à tua conta, com a fatura. Artigos por encomenda chegam em até 30 minutos."
+      }
+    },
+    "giftTitle": "Gift cards para lojas e jogos",
+    "giftSubtitle": "Saldo para App Store, Google Play, PlayStation, Xbox, Steam e Amazon."
+  },
+  "Catalog": {
+    "deliveryInstant": "Entrega imediata",
+    "deliveryOnDemand": "Até 30 min",
+    "giftCard": "Gift card",
+    "subscription": "Assinatura",
+    "plan": "Plano",
+    "addToCart": "Adicionar ao carrinho",
+    "add": "Adicionar",
+    "added": "Adicionado",
+    "filterLabel": "Filtrar por categoria",
+    "search": "Procurar serviço",
+    "empty": "Nenhum serviço corresponde à pesquisa.",
+    "from": "A partir de",
+    "next": "ver o seguinte",
+    "choose": "Escolher plano",
+    "close": "Fechar",
+    "chooseValue": "Escolhe o valor",
+    "choosePlan": "Escolhe o plano",
+    "noteInstant": "Entrega imediata: o código chega ao teu e-mail e à tua conta em segundos.",
+    "noteOnDemand": "Comprado pela nossa equipa e enviado em até 30 minutos.",
+    "noteRegion": "Código da região dos EUA. Explicamos como o resgatar.",
+    "addShort": "Carrinho",
+    "buyNow": "Comprar · {price}",
+    "plansCount": "{count, plural, one {# plano} other {# planos}}"
+  },
+  "Subscriptions": {
+    "eyebrow": "Assinaturas",
+    "title": "Todas as tuas assinaturas, pagas em kwanzas",
+    "subtitle": "Os preços oficiais de cada marca, convertidos para kwanzas. Escolhe o plano e a duração.",
+    "note": "Preços de referência das marcas (EUA) convertidos ao câmbio de {rate} Kz/USD. Os códigos são da região dos EUA."
+  },
+  "GiftCards": {
+    "eyebrow": "Gift Cards",
+    "title": "Saldo para as tuas lojas favoritas",
+    "subtitle": "Carrega a tua conta Apple, Google Play, PlayStation, Xbox, Steam ou Amazon em segundos.",
+    "note": "Valor facial convertido ao câmbio de {rate} Kz/USD. Cartões da região dos EUA."
+  },
+  "Bundle": {
+    "eyebrow": "Bundle StreamOut",
+    "title": "Tudo o que gostas, num só pacote",
+    "subtitle": "Junta várias assinaturas num só pagamento, poupa até 15% e ganha desconto em tudo o resto da loja.",
+    "periodLabel": "Duração do bundle",
+    "annual": "Anual",
+    "months": "{count} meses",
+    "noCard": "Pagas em kwanzas. Não precisas de cartão internacional.",
+    "popular": "Mais popular",
+    "perMonth": "mês",
+    "total": "{total} por {months} meses",
+    "savings": "Poupas {amount}",
+    "included": "O que está incluído",
+    "perk": "−{pct}% em todas as compras avulsas",
+    "cta": "Subscrever agora",
+    "faqTitle": "Perguntas sobre o Bundle",
+    "faq": {
+      "what": {
+        "q": "O que é o Bundle StreamOut?",
+        "a": "É um pacote exclusivo da StreamOut que junta assinaturas de várias marcas num só pagamento, por 3, 6 ou 12 meses, com desconto sobre o preço de cada uma em separado."
+      },
+      "how": {
+        "q": "Como recebo cada assinatura?",
+        "a": "Recebes os códigos de cada serviço no teu e-mail e na tua conta StreamOut. Alguns são entregues de imediato; outros em até 30 minutos."
+      },
+      "discount": {
+        "q": "Como funciona o desconto nas outras compras?",
+        "a": "Enquanto o bundle estiver activo, o desconto do teu plano (5%, 10% ou 15%) é aplicado automaticamente a todas as compras avulsas quando tens sessão iniciada."
+      },
+      "change": {
+        "q": "Posso mudar de plano?",
+        "a": "Sim. Quando o período terminar, podes renovar com outro plano ou outra duração. Avisamos-te com antecedência antes de expirar."
+      }
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "Como funciona",
+    "title": "Simples, rápido e seguro",
+    "subtitle": "Compras digitais sem cartão internacional: pagas em kwanzas e recebes o código em minutos.",
+    "securityTitle": "A tua segurança em primeiro lugar",
+    "securitySubtitle": "Protegemos cada passo, do login ao código que recebes.",
+    "security": {
+      "pin": {
+        "title": "O teu PIN fica contigo",
+        "body": "No Multicaixa Express confirmas o pagamento na tua app. Não guardamos dados de cartões."
+      },
+      "otp": {
+        "title": "Verificação em dois passos",
+        "body": "Cada início de sessão pede um código enviado por e-mail ou SMS."
+      },
+      "encryption": {
+        "title": "Códigos cifrados",
+        "body": "Os teus códigos e credenciais são guardados com cifra forte e só são mostrados depois de confirmares a tua identidade."
+      },
+      "invoice": {
+        "title": "Fatura em cada compra",
+        "body": "Recebes a fatura por e-mail assim que o pagamento é confirmado."
+      }
+    },
+    "faqTitle": "Perguntas frequentes",
+    "faq": {
+      "delivery": {
+        "q": "Quanto tempo demora a entrega?",
+        "a": "Artigos com \"Entrega imediata\" chegam em segundos. Artigos marcados \"Até 30 min\" são comprados pela nossa equipa e enviados em até 30 minutos."
+      },
+      "payment": {
+        "q": "Que formas de pagamento aceitam?",
+        "a": "Multicaixa Express, pagamento por referência e transferência bancária — sempre em kwanzas."
+      },
+      "region": {
+        "q": "Os códigos funcionam em Angola?",
+        "a": "Os códigos são da região dos EUA. Algumas plataformas pedem que a conta esteja nessa região; explicamos sempre como resgatar cada código."
+      },
+      "refund": {
+        "q": "E se algo correr mal?",
+        "a": "Se não conseguirmos entregar dentro do prazo, devolvemos o valor total. Códigos já revelados não podem ser reembolsados, porque não é possível recuperá-los."
+      },
+      "invoice": {
+        "q": "Recebo fatura?",
+        "a": "Sim. A fatura é emitida por software certificado e enviada para o teu e-mail após a confirmação do pagamento."
+      },
+      "account": {
+        "q": "Preciso de conta para comprar?",
+        "a": "Não, mas com conta tens as tuas assinaturas num só lugar, avisos antes de expirarem e o desconto do Bundle."
+      }
+    }
+  },
+  "NotFound": {
+    "eyebrow": "Página",
+    "detail": "não encontrada",
+    "title": "Esta página saiu de cena",
+    "body": "O endereço pode estar errado ou a página foi movida. Mas o resto do catálogo continua aqui.",
+    "home": "Voltar ao início",
+    "catalog": "Ver catálogo"
+  },
+  "Checkout": {
+    "title": "Finalizar compra",
+    "subtitle": "Revê o teu pedido e paga em kwanzas.",
+    "contact": "Contacto",
+    "email": "E-mail",
+    "emailHint": "Os códigos e a fatura são enviados para aqui.",
+    "phone": "Telemóvel (Multicaixa Express)",
+    "phoneError": "Indica um número angolano válido (9 dígitos, começa por 9).",
+    "payment": "Pagamento",
+    "methods": {
+      "mcx": {
+        "name": "Multicaixa Express",
+        "hint": "Confirmas na app com o teu PIN"
+      },
+      "reference": {
+        "name": "Referência",
+        "hint": "Pagas no ATM ou no banco"
+      },
+      "transfer": {
+        "name": "Transferência",
+        "hint": "Por IBAN, em kwanzas"
+      }
+    },
+    "nif": "NIF para a fatura",
+    "optional": "opcional",
+    "human": "Confirmo que sou humano",
+    "summary": "Resumo",
+    "decrease": "Diminuir quantidade",
+    "increase": "Aumentar quantidade",
+    "remove": "Remover",
+    "subtotal": "Subtotal",
+    "bundleDiscount": "Desconto Bundle (−{pct}%)",
+    "total": "Total",
+    "pay": "Pagar {total}",
+    "secureNote": "Pagamento seguro. Não guardamos dados de cartões.",
+    "emptyTitle": "O teu carrinho está vazio",
+    "emptyBody": "Escolhe uma assinatura, um gift card ou o Bundle StreamOut.",
+    "browse": "Explorar catálogo",
+    "awaiting": {
+      "title": "Pagamento pendente",
+      "mcx": {
+        "title": "Confirma no teu telemóvel",
+        "body": "Enviámos um pedido de {total} para {phone}. Abre o Multicaixa Express e confirma com o teu PIN."
+      },
+      "reference": {
+        "title": "Paga por referência",
+        "body": "Usa os dados abaixo para pagar {total} no ATM ou no teu banco. A referência é válida durante 24 horas."
+      },
+      "transfer": {
+        "title": "Faz a transferência",
+        "body": "Transfere {total} para o IBAN abaixo e indica o número da encomenda no descritivo."
+      },
+      "entity": "Entidade",
+      "refLabel": "Referência",
+      "amount": "Montante",
+      "waiting": "A aguardar a confirmação do banco…",
+      "simulate": "Simular pagamento confirmado",
+      "cancel": "Cancelar"
+    },
+    "success": {
+      "title": "Obrigado!",
+      "body": "Pagamento confirmado. Enviámos os códigos e a fatura para {email}.",
+      "onDemand": "Alguns artigos são comprados pela nossa equipa e chegam em até 30 minutos.",
+      "viewOrders": "Ver as minhas compras",
+      "continue": "Continuar a comprar"
+    }
+  },
+  "Popups": {
+    "promoTitle": "Bundle Plus",
+    "promoAccent": "−15% no anual",
+    "promoBody": "Spotify, Netflix, ChatGPT e iCloud+ num só pagamento em kwanzas.",
+    "promoSecondary": "Ver detalhes",
+    "promoPrimary": "Aproveitar",
+    "close": "Fechar",
+    "newsTitle": "Promoções primeiro",
+    "newsAccent": "1×/semana",
+    "newsBody": "Recebe descontos e novidades do catálogo antes de toda a gente.",
+    "newsEmail": "O teu e-mail",
+    "newsCta": "Subscrever",
+    "newsError": "Indica um e-mail válido.",
+    "thanksTitle": "Obrigado!",
+    "thanksBody": "Verifica a tua caixa de entrada para confirmar o e-mail."
+  },
+  "Chat": {
+    "title": "Assistente StreamOut",
+    "status": "Online · responde em segundos",
+    "welcome": "Olá! 👋 Sou o assistente da StreamOut. Posso ajudar com pagamentos, entregas, o Bundle ou qualquer dúvida sobre o catálogo.",
+    "open": "Abrir assistente",
+    "close": "Fechar assistente",
+    "typing": "A escrever…",
+    "placeholder": "Escreve a tua pergunta",
+    "send": "Enviar",
+    "fallback": "Não tenho a certeza de ter percebido. Escolhe uma das opções abaixo ou pede para falar com a equipa.",
+    "answers": {
+      "hello": "Olá! Em que posso ajudar? Pagamentos, entregas, Bundle ou preços?",
+      "payment": "Aceitamos Multicaixa Express, referência e transferência — sempre em kwanzas. No Multicaixa Express confirmas na tua app com o PIN; nós nunca o vemos.",
+      "delivery": "Artigos com \"Entrega imediata\" chegam em segundos ao teu e-mail e à tua conta. Os marcados \"Até 30 min\" são comprados pela equipa e enviados em até 30 minutos.",
+      "bundle": "O Bundle StreamOut junta várias assinaturas num só pagamento (3, 6 ou 12 meses), poupa até 15% e dá-te até 15% de desconto nas outras compras. Vê em Bundle StreamOut no menu.",
+      "prices": "Os preços seguem os preços oficiais de cada marca, convertidos para kwanzas ao câmbio do BNA. Vês o total final antes de pagar.",
+      "refund": "Se não conseguirmos entregar dentro do prazo, devolvemos o valor total. Códigos já revelados não podem ser reembolsados.",
+      "security": "Usamos verificação em dois passos no login, guardamos os códigos cifrados e não guardamos dados de cartões.",
+      "human": "Claro! A nossa equipa responde pelo Instagram @streamout.services. Em breve teremos também WhatsApp."
+    },
+    "quick": {
+      "delivery": "Quanto tempo demora?",
+      "payment": "Como pago?",
+      "bundle": "O que é o Bundle?",
+      "human": "Falar com a equipa"
+    }
+  },
+  "Account": {
+    "title": "A minha conta",
+    "menuLabel": "Menu da conta",
+    "tier": {
+      "essencial": "Essencial",
+      "plus": "Plus",
+      "ultra": "Ultra"
+    },
+    "items": {
+      "profile": "Perfil",
+      "subscriptions": "Assinaturas",
+      "orders": "Encomendas",
+      "settings": "Definições"
+    },
+    "help": "Centro de ajuda",
+    "signOut": "Terminar sessão",
+    "guestTitle": "Entra na tua conta",
+    "guestBody": "Inicia sessão para veres as tuas assinaturas, códigos e faturas.",
+    "guestCta": "Entrar",
+    "hello": "Olá,",
+    "perkActive": "−{pct}% em todas as compras avulsas",
+    "expiringSoon": "A expirar em breve: {names}. Renova para não perderes o acesso.",
+    "activeTitle": "Assinaturas activas",
+    "expires": "expira a {date}",
+    "daysLeft": "{count, plural, one {dia restante} other {dias restantes}}",
+    "progress": "Tempo decorrido de {name}",
+    "showCode": "Ver código",
+    "hideCode": "Esconder",
+    "renew": "Renovar · {price}",
+    "stepUpNote": "Em produção, pedimos um código de verificação antes de mostrar um código ou credencial.",
+    "ordersTitle": "Encomendas e faturas",
+    "status": {
+      "delivered": "Entregue",
+      "refunded": "Reembolsada"
+    },
+    "invoice": "Fatura",
+    "fields": {
+      "name": "Nome",
+      "email": "E-mail",
+      "twoFactor": "Verificação em dois passos",
+      "on": "Activa",
+      "alerts": "Avisos de expiração",
+      "alertsValue": "30, 7 e 1 dia antes"
+    },
+    "demoNote": "Conta de demonstração: os dados mostrados são exemplos."
+  },
+  "Auth": {
+    "signInTitle": "Entrar",
+    "signUpTitle": "Criar conta",
+    "subtitle": "Acede às tuas assinaturas, códigos e faturas.",
+    "name": "Nome completo",
+    "email": "E-mail",
+    "password": "Palavra-passe",
+    "continue": "Continuar",
+    "noAccount": "Ainda não tens conta?",
+    "haveAccount": "Já tens conta?",
+    "createAccount": "Criar conta",
+    "signInLink": "Entrar",
+    "back": "Voltar",
+    "otpTitle": "Introduz o código",
+    "otpBody": "Enviámos um código de 6 dígitos para {target}.",
+    "channel": "Receber o código por",
+    "digit": "Dígito {n}",
+    "demoHint": "Demonstração: qualquer código de 6 dígitos funciona.",
+    "verify": "Verificar e entrar",
+    "resend": "Reenviar código",
+    "resendIn": "Reenviar em {s} s",
+    "errors": {
+      "email": "Indica um e-mail válido.",
+      "password": "A palavra-passe tem de ter pelo menos 8 caracteres.",
+      "name": "Indica o teu nome.",
+      "code": "Introduz os 6 dígitos do código."
+    }
+  },
+  "Footer": {
+    "tagline": "Oferecendo o melhor do entretenimento",
+    "about": "Assinaturas digitais e gift cards pagos em kwanzas, entregues em minutos.",
+    "shop": "Loja",
+    "help": "Ajuda",
+    "links": {
+      "subscriptions": "Assinaturas",
+      "giftCards": "Gift Cards",
+      "bundle": "Bundle StreamOut",
+      "howItWorks": "Como funciona",
+      "faq": "Perguntas frequentes",
+      "account": "A minha conta"
+    },
+    "follow": "Segue-nos",
+    "openNewTab": "abre num novo separador",
+    "soon": "em breve",
+    "payments": "Multicaixa Express · Referência · Transferência",
+    "rights": "Todos os direitos reservados.",
+    "disclaimer": "As marcas pertencem aos respectivos titulares."
+  }
+}

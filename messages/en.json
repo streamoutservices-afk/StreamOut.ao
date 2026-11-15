@@ -1,0 +1,400 @@
+{
+  "Header": {
+    "tagline": "Offering the best of entertainment",
+    "homeLabel": "StreamOut — home",
+    "navLabel": "Main navigation",
+    "skipToContent": "Skip to content",
+    "nav": {
+      "giftCards": "Gift Cards",
+      "subscriptions": "Subscriptions",
+      "bundle": "StreamOut Bundle",
+      "howItWorks": "How it works"
+    },
+    "bundleBadge": "−15%",
+    "bundleBadgeLabel": "up to 15% off",
+    "actions": {
+      "signIn": "Sign in",
+      "account": "My account",
+      "cart": "{count, plural, =0 {Cart is empty} one {Cart, # item} other {Cart, # items}}",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    },
+    "theme": {
+      "label": "Dark mode"
+    },
+    "language": {
+      "label": "Language",
+      "pt": "Português",
+      "en": "English"
+    }
+  },
+  "Home": {
+    "title": "Offering the best of entertainment",
+    "subtitle": "Digital gift cards and subscriptions paid in kwanzas and delivered in minutes. No international card, no hassle — simple, fast and secure.",
+    "ctaPrimary": "Browse catalog",
+    "ctaSecondary": "Discover the Bundle",
+    "trust": {
+      "kz": "Pay in kwanzas",
+      "fast": "Delivered in minutes",
+      "secure": "100% secure",
+      "support": "Local support"
+    },
+    "popularTitle": "Most popular",
+    "popularSubtitle": "Music, shows, AI and storage — at the brands' own prices, converted to kwanzas.",
+    "seeAll": "See all",
+    "stepsTitle": "Buying is quick",
+    "stepsSubtitle": "From click to code in your inbox in three steps.",
+    "steps": {
+      "choose": {
+        "title": "Pick what you want",
+        "body": "Subscriptions, gift cards or the StreamOut Bundle. You see the final price in kwanzas before paying."
+      },
+      "pay": {
+        "title": "Pay in kwanzas",
+        "body": "Multicaixa Express, reference or bank transfer. You confirm on your phone — we never see your PIN."
+      },
+      "receive": {
+        "title": "Get it in minutes",
+        "body": "Your code arrives by email and in your account, with the invoice. Made-to-order items arrive within 30 minutes."
+      }
+    },
+    "giftTitle": "Gift cards for stores and games",
+    "giftSubtitle": "Credit for the App Store, Google Play, PlayStation, Xbox, Steam and Amazon."
+  },
+  "Catalog": {
+    "deliveryInstant": "Instant delivery",
+    "deliveryOnDemand": "Within 30 min",
+    "giftCard": "Gift card",
+    "subscription": "Subscription",
+    "plan": "Plan",
+    "addToCart": "Add to cart",
+    "add": "Add",
+    "added": "Added",
+    "filterLabel": "Filter by category",
+    "search": "Search services",
+    "empty": "No service matches your search.",
+    "from": "From",
+    "next": "show next",
+    "choose": "Choose plan",
+    "close": "Close",
+    "chooseValue": "Choose a value",
+    "choosePlan": "Choose a plan",
+    "noteInstant": "Instant delivery: the code reaches your email and account in seconds.",
+    "noteOnDemand": "Bought by our team and sent within 30 minutes.",
+    "noteRegion": "US-region code. We explain how to redeem it.",
+    "addShort": "Add to cart",
+    "buyNow": "Buy · {price}",
+    "plansCount": "{count, plural, one {# plan} other {# plans}}"
+  },
+  "Subscriptions": {
+    "eyebrow": "Subscriptions",
+    "title": "All your subscriptions, paid in kwanzas",
+    "subtitle": "Each brand's official price, converted to kwanzas. Choose your plan and duration.",
+    "note": "Brands' US reference prices converted at {rate} Kz/USD. Codes are US-region."
+  },
+  "GiftCards": {
+    "eyebrow": "Gift Cards",
+    "title": "Credit for your favourite stores",
+    "subtitle": "Top up your Apple, Google Play, PlayStation, Xbox, Steam or Amazon account in seconds.",
+    "note": "Face value converted at {rate} Kz/USD. US-region cards."
+  },
+  "Bundle": {
+    "eyebrow": "StreamOut Bundle",
+    "title": "Everything you love, in one package",
+    "subtitle": "Combine several subscriptions in one payment, save up to 15% and get a discount on everything else in the store.",
+    "periodLabel": "Bundle duration",
+    "annual": "Yearly",
+    "months": "{count} months",
+    "noCard": "Pay in kwanzas. No international card needed.",
+    "popular": "Most popular",
+    "perMonth": "month",
+    "total": "{total} for {months} months",
+    "savings": "You save {amount}",
+    "included": "What's included",
+    "perk": "−{pct}% on every other purchase",
+    "cta": "Subscribe now",
+    "faqTitle": "Bundle questions",
+    "faq": {
+      "what": {
+        "q": "What is the StreamOut Bundle?",
+        "a": "An exclusive StreamOut package that combines subscriptions from several brands in one payment, for 3, 6 or 12 months, with a discount over buying each separately."
+      },
+      "how": {
+        "q": "How do I receive each subscription?",
+        "a": "You get each service's code by email and in your StreamOut account. Some arrive instantly; others within 30 minutes."
+      },
+      "discount": {
+        "q": "How does the discount on other purchases work?",
+        "a": "While your bundle is active, your plan's discount (5%, 10% or 15%) is applied automatically to every other purchase when you're signed in."
+      },
+      "change": {
+        "q": "Can I switch plans?",
+        "a": "Yes. When your period ends you can renew with a different plan or duration. We remind you before it expires."
+      }
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "How it works",
+    "title": "Simple, fast and secure",
+    "subtitle": "Digital purchases without an international card: pay in kwanzas and get your code in minutes.",
+    "securityTitle": "Your security comes first",
+    "securitySubtitle": "We protect every step, from sign-in to the code you receive.",
+    "security": {
+      "pin": {
+        "title": "Your PIN stays with you",
+        "body": "With Multicaixa Express you confirm the payment in your own app. We don't store card data."
+      },
+      "otp": {
+        "title": "Two-step verification",
+        "body": "Every sign-in asks for a code sent by email or SMS."
+      },
+      "encryption": {
+        "title": "Encrypted codes",
+        "body": "Your codes and credentials are stored with strong encryption and only shown after you confirm it's you."
+      },
+      "invoice": {
+        "title": "An invoice for every order",
+        "body": "You receive the invoice by email as soon as the payment is confirmed."
+      }
+    },
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "delivery": {
+        "q": "How long does delivery take?",
+        "a": "\"Instant delivery\" items arrive in seconds. Items marked \"Within 30 min\" are bought by our team and sent within 30 minutes."
+      },
+      "payment": {
+        "q": "Which payment methods do you accept?",
+        "a": "Multicaixa Express, payment by reference and bank transfer — always in kwanzas."
+      },
+      "region": {
+        "q": "Do the codes work in Angola?",
+        "a": "Codes are US-region. Some platforms require the account to be set to that region; we always explain how to redeem each code."
+      },
+      "refund": {
+        "q": "What if something goes wrong?",
+        "a": "If we can't deliver on time, we refund the full amount. Codes that have already been revealed can't be refunded, as they can't be recovered."
+      },
+      "invoice": {
+        "q": "Do I get an invoice?",
+        "a": "Yes. Invoices are issued by certified software and emailed to you once the payment is confirmed."
+      },
+      "account": {
+        "q": "Do I need an account to buy?",
+        "a": "No, but with an account you keep all your subscriptions in one place, get reminders before they expire and the Bundle discount."
+      }
+    }
+  },
+  "NotFound": {
+    "eyebrow": "Page",
+    "detail": "not found",
+    "title": "This page left the stage",
+    "body": "The address may be wrong or the page has moved. The rest of the catalog is still here.",
+    "home": "Back to home",
+    "catalog": "Browse catalog"
+  },
+  "Checkout": {
+    "title": "Checkout",
+    "subtitle": "Review your order and pay in kwanzas.",
+    "contact": "Contact",
+    "email": "Email",
+    "emailHint": "Codes and the invoice are sent here.",
+    "phone": "Phone (Multicaixa Express)",
+    "phoneError": "Enter a valid Angolan number (9 digits, starting with 9).",
+    "payment": "Payment",
+    "methods": {
+      "mcx": {
+        "name": "Multicaixa Express",
+        "hint": "Confirm in the app with your PIN"
+      },
+      "reference": {
+        "name": "Reference",
+        "hint": "Pay at an ATM or your bank"
+      },
+      "transfer": {
+        "name": "Bank transfer",
+        "hint": "By IBAN, in kwanzas"
+      }
+    },
+    "nif": "Tax number (NIF) for the invoice",
+    "optional": "optional",
+    "human": "I confirm I'm human",
+    "summary": "Summary",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "bundleDiscount": "Bundle discount (−{pct}%)",
+    "total": "Total",
+    "pay": "Pay {total}",
+    "secureNote": "Secure payment. We don't store card data.",
+    "emptyTitle": "Your cart is empty",
+    "emptyBody": "Pick a subscription, a gift card or the StreamOut Bundle.",
+    "browse": "Browse catalog",
+    "awaiting": {
+      "title": "Payment pending",
+      "mcx": {
+        "title": "Confirm on your phone",
+        "body": "We sent a {total} request to {phone}. Open Multicaixa Express and confirm with your PIN."
+      },
+      "reference": {
+        "title": "Pay by reference",
+        "body": "Use the details below to pay {total} at an ATM or your bank. The reference is valid for 24 hours."
+      },
+      "transfer": {
+        "title": "Make the transfer",
+        "body": "Transfer {total} to the IBAN below and add your order number to the description."
+      },
+      "entity": "Entity",
+      "refLabel": "Reference",
+      "amount": "Amount",
+      "waiting": "Waiting for the bank's confirmation…",
+      "simulate": "Simulate confirmed payment",
+      "cancel": "Cancel"
+    },
+    "success": {
+      "title": "Thank you!",
+      "body": "Payment confirmed. We've sent your codes and invoice to {email}.",
+      "onDemand": "Some items are bought by our team and arrive within 30 minutes.",
+      "viewOrders": "View my purchases",
+      "continue": "Keep shopping"
+    }
+  },
+  "Popups": {
+    "promoTitle": "Bundle Plus",
+    "promoAccent": "−15% yearly",
+    "promoBody": "Spotify, Netflix, ChatGPT and iCloud+ in a single payment in kwanzas.",
+    "promoSecondary": "See details",
+    "promoPrimary": "Get it",
+    "close": "Close",
+    "newsTitle": "Deals first",
+    "newsAccent": "1×/week",
+    "newsBody": "Get discounts and catalog news before everyone else.",
+    "newsEmail": "Your email",
+    "newsCta": "Subscribe",
+    "newsError": "Enter a valid email.",
+    "thanksTitle": "Thanks!",
+    "thanksBody": "Check your inbox to confirm your email."
+  },
+  "Chat": {
+    "title": "StreamOut Assistant",
+    "status": "Online · replies in seconds",
+    "welcome": "Hi! 👋 I'm the StreamOut assistant. I can help with payments, delivery, the Bundle or any catalog question.",
+    "open": "Open assistant",
+    "close": "Close assistant",
+    "typing": "Typing…",
+    "placeholder": "Type your question",
+    "send": "Send",
+    "fallback": "I'm not sure I understood. Pick one of the options below or ask to talk to the team.",
+    "answers": {
+      "hello": "Hi! How can I help? Payments, delivery, the Bundle or prices?",
+      "payment": "We accept Multicaixa Express, reference and bank transfer — always in kwanzas. With Multicaixa Express you confirm in your app with your PIN; we never see it.",
+      "delivery": "\"Instant delivery\" items reach your email and account in seconds. Items marked \"Within 30 min\" are bought by our team and sent within 30 minutes.",
+      "bundle": "The StreamOut Bundle combines several subscriptions in one payment (3, 6 or 12 months), saves up to 15% and gives you up to 15% off other purchases. See StreamOut Bundle in the menu.",
+      "prices": "Prices follow each brand's official price, converted to kwanzas at the BNA rate. You see the final total before paying.",
+      "refund": "If we can't deliver on time, we refund the full amount. Codes that have already been revealed can't be refunded.",
+      "security": "We use two-step verification at sign-in, store codes encrypted and never store card data.",
+      "human": "Sure! Our team replies on Instagram @streamout.services. WhatsApp is coming soon."
+    },
+    "quick": {
+      "delivery": "How long does it take?",
+      "payment": "How do I pay?",
+      "bundle": "What's the Bundle?",
+      "human": "Talk to the team"
+    }
+  },
+  "Account": {
+    "title": "My account",
+    "menuLabel": "Account menu",
+    "tier": {
+      "essencial": "Essential",
+      "plus": "Plus",
+      "ultra": "Ultra"
+    },
+    "items": {
+      "profile": "Profile",
+      "subscriptions": "Subscriptions",
+      "orders": "Orders",
+      "settings": "Settings"
+    },
+    "help": "Help Center",
+    "signOut": "Sign out",
+    "guestTitle": "Sign in to your account",
+    "guestBody": "Sign in to see your subscriptions, codes and invoices.",
+    "guestCta": "Sign in",
+    "hello": "Hello,",
+    "perkActive": "−{pct}% on every other purchase",
+    "expiringSoon": "Expiring soon: {names}. Renew so you don't lose access.",
+    "activeTitle": "Active subscriptions",
+    "expires": "expires {date}",
+    "daysLeft": "{count, plural, one {day left} other {days left}}",
+    "progress": "Time elapsed for {name}",
+    "showCode": "Show code",
+    "hideCode": "Hide",
+    "renew": "Renew · {price}",
+    "stepUpNote": "In production, we ask for a verification code before showing any code or credential.",
+    "ordersTitle": "Orders and invoices",
+    "status": {
+      "delivered": "Delivered",
+      "refunded": "Refunded"
+    },
+    "invoice": "Invoice",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "twoFactor": "Two-step verification",
+      "on": "On",
+      "alerts": "Expiry reminders",
+      "alertsValue": "30, 7 and 1 day before"
+    },
+    "demoNote": "Demo account: the data shown are examples."
+  },
+  "Auth": {
+    "signInTitle": "Sign in",
+    "signUpTitle": "Create account",
+    "subtitle": "Access your subscriptions, codes and invoices.",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "continue": "Continue",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "createAccount": "Create account",
+    "signInLink": "Sign in",
+    "back": "Back",
+    "otpTitle": "Enter the code",
+    "otpBody": "We sent a 6-digit code to {target}.",
+    "channel": "Receive the code by",
+    "digit": "Digit {n}",
+    "demoHint": "Demo: any 6-digit code works.",
+    "verify": "Verify and sign in",
+    "resend": "Resend code",
+    "resendIn": "Resend in {s}s",
+    "errors": {
+      "email": "Enter a valid email.",
+      "password": "Password must be at least 8 characters.",
+      "name": "Enter your name.",
+      "code": "Enter all 6 digits of the code."
+    }
+  },
+  "Footer": {
+    "tagline": "Offering the best of entertainment",
+    "about": "Digital subscriptions and gift cards paid in kwanzas, delivered in minutes.",
+    "shop": "Shop",
+    "help": "Help",
+    "links": {
+      "subscriptions": "Subscriptions",
+      "giftCards": "Gift Cards",
+      "bundle": "StreamOut Bundle",
+      "howItWorks": "How it works",
+      "faq": "FAQ",
+      "account": "My account"
+    },
+    "follow": "Follow us",
+    "openNewTab": "opens in a new tab",
+    "soon": "coming soon",
+    "payments": "Multicaixa Express · Reference · Bank transfer",
+    "rights": "All rights reserved.",
+    "disclaimer": "Trademarks belong to their respective owners."
+  }
+}
